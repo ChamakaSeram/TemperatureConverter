@@ -1,0 +1,46 @@
+<div class="container pt-3">
+    <div class="card" style="background-color: #f5f5f5;">
+        <div class="card-body">
+            <h5 class="card-title" >Converter</h5>
+            <form [formGroup]="tempForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <select formControlName="tempType" class="form-control" [(ngModel)]="formData.tempType">
+                            <option selected value="0">---Select Option--</option>
+                            <option value="1">Celsius</option>
+                            <option value="2">Kelvin</option>
+                            <option value="3">Fahrenheit</option>
+                        </select>
+                        <small *ngIf="tempForm.controls['tempType'].invalid && (tempForm.controls['tempType'].dirty || tempForm.controls['tempType'].touched)"  class="text-danger">
+                            <div *ngIf="tempForm.controls['tempType'].errors.required">Temperature type is required.</div>
+                            <div *ngIf="tempForm.controls['tempType'].errors.min">Temperature type is required.</div>
+                        </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type='number' class="form-control" formControlName="tempValue" placeholder="" [(ngModel)]="formData.tempValue" 
+                        (ngModelChange)="calculateTemperature()">
+                        <small *ngIf="tempForm.controls['tempValue'].invalid && (tempForm.controls['tempValue'].dirty || tempForm.controls['tempValue'].touched)" class="text-danger">
+                            <div *ngIf="tempForm.controls['tempValue'].errors.required">Temperature value is required.</div>
+                        </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select formControlName="resultTempType" class="form-control" (ngModelChange)="calculateTemperature()" 
+                        [(ngModel)]="formData.resultTempType">
+                            <option selected value="0">---Select Option---</option>
+                            <option value="1">Celsius</option>
+                            <option value="2">Kelvin</option>
+                            <option value="3">Fahrenheit</option>
+                        </select>
+                        <small *ngIf="tempForm.controls['resultTempType'].invalid && (tempForm.controls['resultTempType'].dirty || tempForm.controls['resultTempType'].touched)" class="text-danger">
+                            <div *ngIf="tempForm.controls['resultTempType'].errors.required">Convert temperature type is required.</div>
+                            <div *ngIf="tempForm.controls['tempType'].errors.min">Convert temperature type is required.</div>
+                        </small>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type='number' class="form-control" formControlName="resultTempValue" placeholder="" disabled="true">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
