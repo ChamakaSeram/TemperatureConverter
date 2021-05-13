@@ -33,7 +33,7 @@
                         </select>
                         <small *ngIf="tempForm.controls['resultTempType'].invalid && (tempForm.controls['resultTempType'].dirty || tempForm.controls['resultTempType'].touched)" class="text-danger">
                             <div *ngIf="tempForm.controls['resultTempType'].errors.required">Convert temperature type is required.</div>
-                            <div *ngIf="tempForm.controls['tempType'].errors.min">Convert temperature type is required.</div>
+                            <div *ngIf="tempForm.controls['resultTempType'].errors.min">Convert temperature type is required.</div>
                         </small>
                     </div>
                     <div class="form-group col-md-3">

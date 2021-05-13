@@ -39,6 +39,8 @@ export class TemperatureConverterComponent implements OnInit {
     if (this.tempForm.valid) {
       var format = this.tempForm.value.tempType + this.tempForm.value.resultTempType;
       this.getResult(format, this.tempForm.value.tempValue);
+    } else {
+      this.tempForm.controls["resultTempValue"].setValue(0);
     }
   }
 
