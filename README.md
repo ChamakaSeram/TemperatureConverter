@@ -13,6 +13,7 @@ I have use default .net core angular template rather than creating two separate 
 
 - Angular 8
 - .Net core 3.1
+- bootstrap 4
 
 ## Technical Description
 
