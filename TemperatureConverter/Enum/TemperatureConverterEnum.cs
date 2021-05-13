@@ -10,10 +10,7 @@ namespace TemperatureConverter.Enum
         public enum ApiResponseEnum
         {
             Success = 1,
-            Error = 2,
-            SessionExpired = 3,
-            Approval = 4,
-            Warning = 5
+            Error = 2
         }
 
         public enum TempFormatEnum

@@ -17,32 +17,36 @@ namespace TemperatureConverter.Services
             this.temperatureAPIResponse = temperatureAPIResponse;
         }
 
-        private double ConvertFromCelsiusToFahrenheit(float celsius)
+        public TemperatureConverterService()
+        {
+        }
+
+        public double ConvertFromCelsiusToFahrenheit(float celsius)
         {
             return (celsius * 9 / 5) + 32;
         }
 
-        private double ConvertFromCelsiusToKelvin(float celsius)
+        public double ConvertFromCelsiusToKelvin(float celsius)
         {
             return celsius + 273.15;
         }
 
-        private double ConvertFromKelvinToFahrenheit(float kelvin)
+        public double ConvertFromKelvinToFahrenheit(float kelvin)
         {
             return (kelvin - 273.15) * 9 / 5 + 32;
         }
 
-        private double ConvertFromKelvinToCelsius(float kelvin)
+        public double ConvertFromKelvinToCelsius(float kelvin)
         {
             return kelvin - 273.15;
         }
 
-        private double ConvertFromFahrenheitToKelvin(float fahrenheit)
+        public double ConvertFromFahrenheitToKelvin(float fahrenheit)
         {
             return (fahrenheit - 32) * 5 / 9 + 273.15;
         }
 
-        private double ConvertFromFahrenheitToCelsius(float fahrenheit)
+        public double ConvertFromFahrenheitToCelsius(float fahrenheit)
         {
             return (fahrenheit - 32) * 5 / 9;
         }
