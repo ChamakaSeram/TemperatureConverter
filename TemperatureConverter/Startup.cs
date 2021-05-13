@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TemperatureConverter.Interfaces;
+using TemperatureConverter.Services;
 
 namespace TemperatureConverter
 {
@@ -22,6 +24,9 @@ namespace TemperatureConverter
         {
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
+            
+            services.AddTransient<ITemperatureAPIResponse, TemperatureAPIResponse>();
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
